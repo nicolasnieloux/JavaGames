@@ -1,10 +1,10 @@
 package fr.campusnumerique.cda.games.utils;
 
 public class GameController {
-    private View view = new View();
-    private Validator validator = new Validator();
+    private View view = View.getInstance();
+    private Validator validator = Validator.getInstance();
 
-    private UserInteraction userInteraction = new UserInteraction();
+    private UserInteraction userInteraction = UserInteraction.getInstance();
 
 
     public void play() {

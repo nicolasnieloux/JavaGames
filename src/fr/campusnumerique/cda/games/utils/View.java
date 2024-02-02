@@ -5,6 +5,16 @@ import fr.campusnumerique.cda.games.board.BoardInterface;
 import fr.campusnumerique.cda.games.cell.TicTacToeCell;
 
 public class View {
+
+    private static View instance;
+    private View(){};
+
+    public static View getInstance(){
+        if(instance == null){
+            instance = new View();
+        }
+        return instance;
+    }
     public void showWelcomeMsg() {
         System.out.println("Welcome to the best place to play");
     }
