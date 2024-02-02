@@ -8,8 +8,20 @@ public class GameController {
 
 
     public void play() {
+
         view.showWelcomeMsg();
+        String modeChoise = getModeChoice();
+
+
     }
 
+    private String getModeChoice(){
 
+        String modeChoice = "";
+        while(!validator.verifyInputUserInt(1,3, modeChoice)){
+            view.showAskGameModeMsg();
+            modeChoice = userInteraction.getUserInput();
+        }
+        return modeChoice;
+    }
 }
