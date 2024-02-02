@@ -3,6 +3,7 @@ package fr.campusnumerique.cda.games.board;
 import fr.campusnumerique.cda.games.cell.CellAbstract;
 import fr.campusnumerique.cda.games.cell.CellInterface;
 import fr.campusnumerique.cda.games.cell.TicTacToeCell;
+import fr.campusnumerique.cda.games.utils.Coordinate;
 
 public class TicTacToeBoard extends BoardAbstract {
 
@@ -19,5 +20,10 @@ public class TicTacToeBoard extends BoardAbstract {
                 board[i][j] = new TicTacToeCell();
             }
         }
+    }
+
+    @Override
+    public CellInterface getCell(Coordinate coordinate) {
+        return null;
     }
 }

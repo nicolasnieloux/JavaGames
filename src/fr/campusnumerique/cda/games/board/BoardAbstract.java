@@ -13,8 +13,16 @@ public abstract class BoardAbstract implements BoardInterface {
         this.heigth = heigth;
     }
 
-    public CellInterface getCell(Coordinate coordinate) {
-        return board[coordinate.getX()][coordinate.getY()];
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeigth() {
+        return heigth;
+    }
+
+    public CellInterface getCell(int x, int y) {
+        return board[x][y];
     }
 
 }

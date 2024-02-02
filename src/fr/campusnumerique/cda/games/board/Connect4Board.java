@@ -1,12 +1,15 @@
 package fr.campusnumerique.cda.games.board;
 
+import fr.campusnumerique.cda.games.cell.CellInterface;
 import fr.campusnumerique.cda.games.cell.Connect4Cell;
 import fr.campusnumerique.cda.games.cell.TicTacToeCell;
+import fr.campusnumerique.cda.games.utils.Coordinate;
 
 public class Connect4Board extends BoardAbstract {
     public Connect4Board(int width, int heigth) {
         super(width, heigth);
     }
+
 
     private void createBoard() {
 
@@ -15,5 +18,10 @@ public class Connect4Board extends BoardAbstract {
                 board[i][j] = new Connect4Cell();
             }
         }
+    }
+
+    @Override
+    public CellInterface getCell(Coordinate coordinate) {
+        return null;
     }
 }

@@ -1,7 +1,9 @@
 package fr.campusnumerique.cda.games.board;
 
+import fr.campusnumerique.cda.games.cell.CellInterface;
 import fr.campusnumerique.cda.games.cell.GomokuCell;
 import fr.campusnumerique.cda.games.cell.TicTacToeCell;
+import fr.campusnumerique.cda.games.utils.Coordinate;
 
 public class GomokuBoard extends BoardAbstract {
     public GomokuBoard(int width, int heigth) {
@@ -15,5 +17,10 @@ public class GomokuBoard extends BoardAbstract {
                 board[i][j] = new GomokuCell();
             }
         }
+    }
+
+    @Override
+    public CellInterface getCell(Coordinate coordinate) {
+        return null;
     }
 }
