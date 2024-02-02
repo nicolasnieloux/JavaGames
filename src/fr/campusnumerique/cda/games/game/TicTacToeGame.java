@@ -4,14 +4,9 @@ import fr.campusnumerique.cda.games.board.BoardInterface;
 import fr.campusnumerique.cda.games.board.TicTacToeBoard;
 import fr.campusnumerique.cda.games.players.PlayerInterface;
 
-public class GameTicTacToe {
+public class TicTacToeGame extends GameAbstract{
 
-    private PlayerInterface[] players = new PlayerInterface[2];
-    private PlayerInterface player1;
-    private PlayerInterface player2;
-    private BoardInterface board;
-
-    private GameTicTacToe(String mode){
+    protected TicTacToeGame(String mode){
         board = new TicTacToeBoard(3,3);
     }
 
