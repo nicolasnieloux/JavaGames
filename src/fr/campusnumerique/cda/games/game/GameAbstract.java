@@ -9,8 +9,12 @@ public abstract class GameAbstract {
     protected PlayerInterface player2;
     protected BoardInterface board;
 
-    public PlayerInterface[] getPlayers() {
-        return players;
+    public PlayerInterface getPlayer1() {
+        return player1;
+    }
+
+    public PlayerInterface getPlayer2() {
+        return player2;
     }
 
     public BoardInterface getBoard() {

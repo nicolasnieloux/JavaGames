@@ -6,12 +6,15 @@ import fr.campusnumerique.cda.games.game.TicTacToeGame;
 import fr.campusnumerique.cda.games.symbol.SymbolInterface;
 
 public class PlayerFactory {
-    public void createPlayer(String type, String mode, int playerNb){
-        switch (mode){
-            case "1" : (playerNb == 1) ? new HumanPlayer(SymbolInterface): new HumanPlayer(SymbolInterface);
-            case "2" : (playerNb == 1) ? new HumanPlayer(SymbolInterface): new ArtificialPlayer(SymbolInterface);
-            case "3" : (playerNb == 1) ? new ArtificialPlayer(SymbolInterface): new ArtificialPlayer(SymbolInterface);
-        }
+    public PlayerInterface createPlayer(String mode, int playerNb, SymbolInterface symbol){
+        sout:
+        return switch (mode) {
+            case "1" -> new HumanPlayer(symbol);
+            case "2" -> (playerNb == 1) ? new HumanPlayer(symbol) : new ArtificialPlayer(symbol);
+            case "3" -> new ArtificialPlayer(symbol);
+            default -> throw new IllegalArgumentException("The player cannot be created");
+        };
+
 
     };
 }
