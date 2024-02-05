@@ -1,7 +1,6 @@
 package fr.campusnumerique.cda.games.board;
 
 import fr.campusnumerique.cda.games.cell.CellInterface;
-import fr.campusnumerique.cda.games.utils.Coordinate;
 
 public abstract class BoardAbstract implements BoardInterface {
     protected CellInterface[][] board;
@@ -17,7 +16,7 @@ public abstract class BoardAbstract implements BoardInterface {
         return width;
     }
 
-    public int getHeigth() {
+    public int getHeight() {
         return heigth;
     }
 

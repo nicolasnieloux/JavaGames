@@ -21,7 +21,7 @@ public class GameController {
 
         String modeChoice = "";
         while(!validator.verifyInputUserInt(1,3, modeChoice)){
-            view.showAskGameModeMsg();
+            view.showAskGameTypeMsg();
             modeChoice = userInteraction.getUserInput();
         }
         return modeChoice;

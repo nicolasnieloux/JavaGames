@@ -1,7 +1,6 @@
 package fr.campusnumerique.cda.games.utils;
 
 import fr.campusnumerique.cda.games.board.BoardAbstract;
-import fr.campusnumerique.cda.games.board.BoardInterface;
 import fr.campusnumerique.cda.games.cell.TicTacToeCell;
 
 public class View {
@@ -36,7 +35,7 @@ public class View {
     public void displayCurrentBoard(BoardAbstract board) {
         printSeparationLine(board.getWidth());
         for (int i = 0; i < board.getWidth(); i++) {
-            for (int j = 0; j < board.getHeigth(); j++) {
+            for (int j = 0; j < board.getHeight(); j++) {
                 System.out.print(board.getCell(i, j).getRepresentation());
             }
             printEndLine();
