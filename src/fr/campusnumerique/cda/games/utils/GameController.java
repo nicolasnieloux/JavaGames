@@ -26,21 +26,36 @@ public class GameController {
         view.displayCurrentBoard(game.getBoard());
         int x = 0;
         int y = 0;
-        boolean coordinateXisCorrect = false;
-        boolean coordinateYisCorrect = false;
+
+
         int turns = 0;
         while (!game.isOver(x, y, turns)) {
-
-            do {
-                view.displayCoordonateX();
-                String coordinateX = userInteraction.getUserInput();
-                coordinateXisCorrect = validator.verifyInputUserInt(1, 3, coordinateX);
-
-                view.displayCoordonateY();
-                String coordinateY = userInteraction.getUserInput();
-                coordinateYisCorrect = validator.verifyInputUserInt(1, 3, coordinateY);
-            } while (!coordinateXisCorrect || !coordinateYisCorrect);
+            String CoordinateX = getPlayersXCoordinate();
+            String CoordinateY = getPlayersYCoordinate();
         }
+    }
+
+    private String getPlayersXCoordinate(){
+        boolean coordinateXisCorrect = false;
+        String coordinateX;
+        do {
+            view.displayCoordonateX();
+            coordinateX = userInteraction.getUserInput();
+            coordinateXisCorrect = validator.verifyInputUserInt(1, 3, coordinateX);
+        } while (!coordinateXisCorrect);
+        return coordinateX;
+    }
+
+    private String getPlayersYCoordinate(){
+        boolean coordinateYisCorrect = false;
+        String coordinateY;
+        do {
+
+            view.displayCoordonateY();
+            coordinateY = userInteraction.getUserInput();
+            coordinateYisCorrect = validator.verifyInputUserInt(1, 3, coordinateY);
+        } while (!coordinateYisCorrect);
+        return coordinateY;
     }
 
     private String getModeChoice() {
