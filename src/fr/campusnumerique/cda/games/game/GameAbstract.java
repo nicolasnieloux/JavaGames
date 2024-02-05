@@ -21,4 +21,6 @@ public abstract class GameAbstract {
         return board;
     }
 
+    public abstract boolean isOver(int x, int y);
+
 }

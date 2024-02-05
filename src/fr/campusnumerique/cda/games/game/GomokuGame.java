@@ -8,4 +8,9 @@ public class GomokuGame extends GameAbstract{
         board = new GomokuBoard(15,15);
 
     }
+
+    @Override
+    public boolean isOver(int x, int y) {
+        return false;
+    }
 }

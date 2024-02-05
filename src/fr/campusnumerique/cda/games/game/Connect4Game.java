@@ -7,4 +7,9 @@ public class Connect4Game extends GameAbstract{
     protected Connect4Game(String mode){
         board = new Connect4Board(7,6);
     }
+
+    @Override
+    public boolean isOver(int x, int y) {
+        return false;
+    }
 }
