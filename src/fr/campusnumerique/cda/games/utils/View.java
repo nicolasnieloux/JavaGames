@@ -58,4 +58,15 @@ public class View {
         System.out.println("|");
     }
 
+    public void displayCoordonateX(){
+        System.out.println("Veuillez entrer la coordonnée X");
+    }
+
+    /**
+     * Displays a message prompting the player to enter the Y coordinate.
+     */
+    public void displayCoordonateY(){
+        System.out.println("Veuillez entrer la coordonnée Y");
+    }
+
 }

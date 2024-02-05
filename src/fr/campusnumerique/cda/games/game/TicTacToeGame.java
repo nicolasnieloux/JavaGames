@@ -79,6 +79,8 @@ public class TicTacToeGame extends GameAbstract {
 
     @Override
     public boolean isOver(int x, int y) {
+        System.out.println(boardIsFull());
+        System.out.println(hasWinner(x,y));
         return boardIsFull() || hasWinner(x,y);
     }
 }

@@ -26,8 +26,19 @@ public class GameController {
         view.displayCurrentBoard(game.getBoard());
         int x = 0;
         int y = 0;
+        boolean coordinateXisCorrect = false;
+        boolean coordinateYisCorrect = false;
         while (!game.isOver(x, y)) {
-            System.out.println("tata");
+
+            do {
+                view.displayCoordonateX();
+                String coordinateX = userInteraction.getUserInput();
+                coordinateXisCorrect = validator.verifyInputUserInt(1, 3, coordinateX);
+
+                view.displayCoordonateY();
+                String coordinateY = userInteraction.getUserInput();
+                coordinateYisCorrect = validator.verifyInputUserInt(1, 3, coordinateY);
+            } while (!coordinateXisCorrect || !coordinateYisCorrect);
         }
     }
 
