@@ -28,7 +28,7 @@ public class TicTacToeGame extends GameAbstract {
     private boolean hasWinner(int x, int y) {
         System.out.println("verify vertical: " + verifyVertical(x, y));
         System.out.println("verify horizontal: " + verifyHorizontal(x, y));
-        System.out.println("verify diagonal: " +verifyDiagonal(x, y));
+        System.out.println("verify diagonal: " + verifyDiagonal(x, y));
         return (verifyVertical(x, y) || verifyHorizontal(x, y) || verifyDiagonal(x, y));
     }
 
@@ -48,7 +48,7 @@ public class TicTacToeGame extends GameAbstract {
 
         String playerRepresentation = board.getCell(x, y).getRepresentation();
         for (int i = 0; i < sizeSide; i++) {
-            if (board.getCell(x, i).getRepresentation() != playerRepresentation) {
+            if (!Objects.equals(board.getCell(x, i).getRepresentation(), playerRepresentation)) {
                 return false;
             }
         }
@@ -83,8 +83,8 @@ public class TicTacToeGame extends GameAbstract {
 
     @Override
     public boolean isOver(int x, int y, int turns) {
-        if(turns >= (size -1  )){
-            return boardIsFull() || hasWinner(x,y);
+        if (turns >= (sizeSide - 1)) {
+            return boardIsFull() || hasWinner(x, y);
         }
         return false;
     }
