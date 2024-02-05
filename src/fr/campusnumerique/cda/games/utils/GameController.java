@@ -24,18 +24,19 @@ public class GameController {
         GameAbstract game = new GameFactory().createGame(gameChoice, modeChoice);
 
         view.displayCurrentBoard(game.getBoard());
-        int x = 0;
-        int y = 0;
 
-
+        int coordinateX;
+        int coordinateY;
         int turns = 0;
-        while (!game.isOver(x, y, turns)) {
-            String CoordinateX = getPlayersXCoordinate();
-            String CoordinateY = getPlayersYCoordinate();
-        }
+
+        do {
+            coordinateX = getPlayersXCoordinate();
+            coordinateY = getPlayersYCoordinate();
+            turns++;
+        } while (!game.isOver(coordinateX, coordinateY, turns));
     }
 
-    private String getPlayersXCoordinate(){
+    private int getPlayersXCoordinate() {
         boolean coordinateXisCorrect = false;
         String coordinateX;
         do {
@@ -43,19 +44,18 @@ public class GameController {
             coordinateX = userInteraction.getUserInput();
             coordinateXisCorrect = validator.verifyInputUserInt(1, 3, coordinateX);
         } while (!coordinateXisCorrect);
-        return coordinateX;
+        return Integer.parseInt(coordinateX);
     }
 
-    private String getPlayersYCoordinate(){
+    private int getPlayersYCoordinate() {
         boolean coordinateYisCorrect = false;
         String coordinateY;
         do {
-
             view.displayCoordonateY();
             coordinateY = userInteraction.getUserInput();
             coordinateYisCorrect = validator.verifyInputUserInt(1, 3, coordinateY);
         } while (!coordinateYisCorrect);
-        return coordinateY;
+        return Integer.parseInt(coordinateY);
     }
 
     private String getModeChoice() {

@@ -68,5 +68,8 @@ public class View {
     public void displayCoordonateY(){
         System.out.println("Veuillez entrer la coordonnée Y");
     }
+    public void displayMessageCellIsNotEmpty(){
+        System.out.println("La case est déjà prise");
+    }
 
 }
