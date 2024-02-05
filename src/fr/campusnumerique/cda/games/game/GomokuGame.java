@@ -10,7 +10,7 @@ public class GomokuGame extends GameAbstract{
     }
 
     @Override
-    public boolean isOver(int x, int y) {
+    public boolean isOver(int x, int y, int turns) {
         return false;
     }
 }

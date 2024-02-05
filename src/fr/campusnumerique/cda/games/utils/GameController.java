@@ -28,7 +28,8 @@ public class GameController {
         int y = 0;
         boolean coordinateXisCorrect = false;
         boolean coordinateYisCorrect = false;
-        while (!game.isOver(x, y)) {
+        int turns = 0;
+        while (!game.isOver(x, y, turns)) {
 
             do {
                 view.displayCoordonateX();
