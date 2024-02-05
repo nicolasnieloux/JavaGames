@@ -7,7 +7,6 @@ import fr.campusnumerique.cda.games.symbol.SymbolInterface;
 
 public class PlayerFactory {
     public PlayerInterface createPlayer(String mode, int playerNb, SymbolInterface symbol){
-        sout:
         return switch (mode) {
             case "1" -> new HumanPlayer(symbol);
             case "2" -> (playerNb == 1) ? new HumanPlayer(symbol) : new ArtificialPlayer(symbol);

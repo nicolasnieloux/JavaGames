@@ -4,10 +4,16 @@ import fr.campusnumerique.cda.games.game.GameAbstract;
 import fr.campusnumerique.cda.games.game.GameFactory;
 
 public class GameController {
-    private View view = View.getInstance();
-    private Validator validator = Validator.getInstance();
-    private UserInteraction userInteraction = UserInteraction.getInstance();
+    private View view;
+    private Validator validator;
+    private UserInteraction userInteraction;
 
+
+    public GameController(){
+        view = View.getInstance();
+        validator = Validator.getInstance();
+        userInteraction = UserInteraction.getInstance();
+    }
 
     public void play() {
 
