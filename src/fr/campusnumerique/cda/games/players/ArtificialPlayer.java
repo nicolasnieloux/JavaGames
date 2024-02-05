@@ -3,9 +3,14 @@ package fr.campusnumerique.cda.games.players;
 import fr.campusnumerique.cda.games.symbol.SymbolInterface;
 import fr.campusnumerique.cda.games.utils.Coordinate;
 
-public class ArtificialPlayer implements PlayerInterface{
+import java.util.Random;
+
+public class ArtificialPlayer implements PlayerInterface {
 
     private SymbolInterface symbol;
+
+    public ArtificialPlayer() {
+    }
 
     public ArtificialPlayer(SymbolInterface symbol) {
         this.symbol = symbol;
@@ -19,5 +24,10 @@ public class ArtificialPlayer implements PlayerInterface{
     @Override
     public Coordinate giveCoordinate() {
         return null;
+    }
+
+    public int PlayArtificialPlayer() {
+        Random random = new Random();
+        return random.nextInt(3);
     }
 }
