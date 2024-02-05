@@ -3,12 +3,14 @@ package fr.campusnumerique.cda.games.utils;
 import fr.campusnumerique.cda.games.game.GameAbstract;
 import fr.campusnumerique.cda.games.game.GameFactory;
 import fr.campusnumerique.cda.games.game.TicTacToeGame;
+import fr.campusnumerique.cda.games.players.PlayerInterface;
 
 public class GameController {
     private View view;
     private Validator validator;
     private UserInteraction userInteraction;
 
+    private PlayerInterface currentPlayer;
 
     public GameController() {
         view = View.getInstance();
@@ -22,18 +24,35 @@ public class GameController {
         String modeChoice = getModeChoice();
         String gameChoice = getGameChoice();
         GameAbstract game = new GameFactory().createGame(gameChoice, modeChoice);
-
+        currentPlayer = game.getPlayer1();
         view.displayCurrentBoard(game.getBoard());
 
-        int coordinateX;
-        int coordinateY;
-        int turns = 0;
 
+        int turns = 0;
+        int[] coordinates = new int[2];
         do {
-            coordinateX = getPlayersXCoordinate();
-            coordinateY = getPlayersYCoordinate();
+            System.out.println(currentPlayer);
+            coordinates = getMoveFromPlayer(game);
             turns++;
-        } while (!game.isOver(coordinateX, coordinateY, turns));
+            game.getBoard().getCell(coordinates[0], coordinates[1]).occupy(currentPlayer.getSymbol());
+            nextPlayer(game);
+            view.displayCurrentBoard(game.getBoard());
+        } while (!game.isOver(coordinates[0], coordinates[1], turns));
+    }
+
+    private int[] getMoveFromPlayer(GameAbstract game) {
+        boolean validMove = false;
+
+        int[] coordinates = new int[2];
+        while (!validMove) {
+            coordinates[0] = getPlayersXCoordinate()-1;
+            coordinates[1] = getPlayersYCoordinate()-1;
+            validMove = !game.getBoard().getCell(coordinates[0], coordinates[1]).isOccupied();
+            System.out.println(validMove);
+        }
+
+        return coordinates;
+
     }
 
     private int getPlayersXCoordinate() {
@@ -76,5 +95,9 @@ public class GameController {
             gameChoice = userInteraction.getUserInput();
         }
         return gameChoice;
+    }
+
+    public void nextPlayer(GameAbstract gameAbstract) {
+        currentPlayer = (currentPlayer == gameAbstract.getPlayer1()) ? gameAbstract.getPlayer2() : gameAbstract.getPlayer1();
     }
 }
