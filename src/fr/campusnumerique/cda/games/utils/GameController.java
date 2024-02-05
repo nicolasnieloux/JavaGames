@@ -45,8 +45,8 @@ public class GameController {
 
         int[] coordinates = new int[2];
         while (!validMove) {
-            coordinates[0] = getPlayersXCoordinate()-1;
-            coordinates[1] = getPlayersYCoordinate()-1;
+            coordinates[1] = getPlayersXCoordinate()-1;
+            coordinates[0] = getPlayersYCoordinate()-1;
             validMove = !game.getBoard().getCell(coordinates[0], coordinates[1]).isOccupied();
             System.out.println(validMove);
         }
