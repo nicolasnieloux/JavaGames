@@ -10,11 +10,11 @@ public class TicTacToeBoard extends BoardAbstract {
 
     public TicTacToeBoard(int width, int heigth) {
         super(width, heigth);
+        createBoard();
     }
 
     private void createBoard() {
-       // TicTacToeCell board[width] = new TicTacToeCell();
-
+        board = new TicTacToeCell[width][heigth];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < heigth; j++) {
                 board[i][j] = new TicTacToeCell();

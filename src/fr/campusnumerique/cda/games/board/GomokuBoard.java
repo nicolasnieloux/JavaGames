@@ -8,9 +8,11 @@ import fr.campusnumerique.cda.games.utils.Coordinate;
 public class GomokuBoard extends BoardAbstract {
     public GomokuBoard(int width, int heigth) {
         super(width, heigth);
+        createBoard();
     }
 
     private void createBoard() {
+        board = new GomokuCell[width][heigth];
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < heigth; j++) {

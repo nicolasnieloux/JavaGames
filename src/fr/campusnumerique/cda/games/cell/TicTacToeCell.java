@@ -15,6 +15,6 @@ public class TicTacToeCell extends CellAbstract {
 
     @Override
     public String getRepresentation() {
-        return ("| " + getSymbol() + " ");
+        return ("| " + getSymbol().getRepresentation() + " ");
     }
 }

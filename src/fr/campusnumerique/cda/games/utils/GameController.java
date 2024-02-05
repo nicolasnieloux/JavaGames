@@ -15,6 +15,8 @@ public class GameController {
         String modeChoice = getModeChoice();
         String gameChoice = getGameChoice();
         GameAbstract game = new GameFactory().createGame(gameChoice, modeChoice);
+
+        view.displayCurrentBoard(game.getBoard());
     }
 
     private String getModeChoice(){

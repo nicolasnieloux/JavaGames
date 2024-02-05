@@ -10,7 +10,7 @@ public class Connect4Cell extends CellAbstract {
 
     @Override
     public String getRepresentation() {
-        return ("| " + getSymbol() + " ");
+        return ("| " + getSymbol().getRepresentation() + " ");
     }
 
     @Override

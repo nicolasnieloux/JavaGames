@@ -17,7 +17,7 @@ public class GomokuCell extends CellAbstract {
     @Override
     public String getRepresentation() {
         return ("  |  \n" +
-                "--"+getSymbol() + "--\n" +
+                "--"+getSymbol().getRepresentation() + "--\n" +
                 "  |  ");
     }
 }

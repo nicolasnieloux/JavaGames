@@ -8,10 +8,12 @@ import fr.campusnumerique.cda.games.utils.Coordinate;
 public class Connect4Board extends BoardAbstract {
     public Connect4Board(int width, int heigth) {
         super(width, heigth);
+        createBoard();
     }
 
 
     private void createBoard() {
+        board = new Connect4Cell[width][heigth];
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < heigth; j++) {
